@@ -1,23 +1,24 @@
 package org.generation.ecommerce.model.dto;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class UserLoginDto {
 
 	private String nome;
+
 	private String sobrenome;
+
 	@NotBlank(message = "Campo não pode ser vazio")
 	private String usuario;
-	@Email
-	@NotBlank(message = "Campo não pode ser vazio")
+
 	private String email;
+
 	@NotNull(message = "Campo não pode ser nulo")
 	private String senha;
 
 	private String token;
-	
+
 	public String getToken() {
 		return token;
 	}

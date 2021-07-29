@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author Leonardo Rosenbaum
+ **/
 @RestController
-@RequestMapping("api/v1/categoria")
+@RequestMapping("api/v1/residuo")
 @CrossOrigin("*")
 public class CategoriaController {
 
@@ -32,7 +35,7 @@ public class CategoriaController {
 		return ResponseEntity.ok(categoriaService.findAll());
 	}
 	
-	@GetMapping("/residuo/buscar/{idCategoria}")
+	@GetMapping("/buscar/id/{idCategoria}")
 	public ResponseEntity<?> findById(@Valid @PathVariable Long idCategoria) {
 		return ResponseEntity.ok(repository.findById(idCategoria));
 	}
@@ -47,12 +50,12 @@ public class CategoriaController {
 		return ResponseEntity.ok(categoriaService.cadastrar(residuo));
 	}
 
-	@PutMapping("/residuo/atualizar/id/{idCategoria}")
+	@PutMapping("/atualizar/id/{idCategoria}")
 	public ResponseEntity<?> atualizar(@Valid @PathVariable Long idCategoria, @RequestBody Categoria residuo) {
 		return ResponseEntity.ok(categoriaService.att(idCategoria, residuo));
 	}
 
-	@DeleteMapping("/residuo/deletar/id/{idCategoria}")
+	@DeleteMapping("/deletar/id/{idCategoria}")
 	public void delete(@Valid @PathVariable Long idCategoria) {
 		repository.deleteById(idCategoria);
 	}

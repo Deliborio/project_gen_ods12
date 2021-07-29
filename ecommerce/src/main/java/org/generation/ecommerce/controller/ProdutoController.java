@@ -1,9 +1,7 @@
 package org.generation.ecommerce.controller;
 
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +18,11 @@ import org.generation.ecommerce.model.Produto;
 import org.generation.ecommerce.repository.ProdutoRepository;
 import org.generation.ecommerce.service.ProdutoService;
 
+/**
+ * @author Jessica Marques
+ * @author Paola
+ * @author Rafael
+ **/
 @RestController
 @RequestMapping("/api/v1/produto")
 @CrossOrigin("*")
@@ -70,20 +73,4 @@ public class ProdutoController {
 	public void delete(@Valid @PathVariable Long id) {
 		produto.deleteById(id);
 	}
-
-	/*
-	 * @GetMapping("/data_retirada/{data_retirada}") public
-	 * ResponseEntity<List<Produto>> buscarData_retirada(@PathVariable String
-	 * data_retirada) { return
-	 * ResponseEntity.ok(produto.findAllByData_RetiradaContainingIgnoreCase(
-	 * data_retirada)); }
-	 */
-
-	/*
-	 * @GetMapping("/quantidade/{quantidade}") public ResponseEntity<List<Produto>>
-	 * buscarQuantidade(@PathVariable Long quantidade) { return
-	 * ResponseEntity.ok(produto.findAllByQuantidadeContainingIgnoreCase(quantidade)
-	 * ); }
-	 */
-
 }

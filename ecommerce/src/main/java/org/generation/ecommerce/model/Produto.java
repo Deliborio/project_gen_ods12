@@ -10,6 +10,11 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * @author Poala
+ * @author Jessica Marques
+ * @author Rafael
+ */
 @Entity
 @Table(name = "produto")
 public class Produto {
@@ -35,6 +40,7 @@ public class Produto {
 	@ManyToOne
 	@JsonIgnoreProperties({"produto", "listaProduto"})
 	@JoinColumn(name = "fk_categoria")
+	@NotNull
 	private Categoria categoria;
 
 	@ManyToOne

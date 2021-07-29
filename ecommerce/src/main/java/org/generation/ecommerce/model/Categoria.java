@@ -15,6 +15,10 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * @author Leonardo Rosenbaum
+ **/
+
 @Entity
 @Table(name = "categoria")
 public class Categoria {
@@ -29,7 +33,7 @@ public class Categoria {
 	private Float preco;
 
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"categoria"})
+	@JsonIgnoreProperties({ "categoria" })
 	private List<Produto> listaProduto = new ArrayList<>();
 
 	public Float getPreco() {

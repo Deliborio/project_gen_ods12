@@ -16,6 +16,8 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	public List<Usuario> findByNomeContainingIgnoreCase(String nome);
-	public Optional<Usuario> findByUsuario(String usuario);
+	public List<Usuario> findAllByUsuario(String usuario);
+	Optional<Usuario> findByUsuario(String usuario);
+	public List<Usuario> findByEmail(String email);
 	
 }

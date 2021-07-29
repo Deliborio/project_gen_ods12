@@ -6,6 +6,13 @@ import org.generation.ecommerce.model.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * 
+ * @author Poala
+ * @author Jessica Marques
+ * @author Rafael
+ *
+ */
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 

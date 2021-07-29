@@ -10,9 +10,10 @@ import javax.validation.constraints.Size;
  * 
  */
 public class UsuarioDTO {
-	@NotNull(message = "Senha deve conter oito caracteres.")
 	@Size(min = 8)
 	private String senha;
+
+	private String usuario;
 
 	// Special Methods
 	public String getSenha() {
@@ -22,4 +23,14 @@ public class UsuarioDTO {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+		
+
 }

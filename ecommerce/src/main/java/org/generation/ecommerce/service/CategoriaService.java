@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Leonardo Rosenbaum
+ */
 @Service
 public class CategoriaService {
 
@@ -30,10 +33,10 @@ public class CategoriaService {
 	}
 
 	/**
-	 * aa
-	 * @param novoResiduo
-	 * @return
-	 * @author 
+	 * @param novoResiduo - Corpo de parametro necessario para passar um novo residuo.
+	 * @return - Retorna o residuo salvo na db.
+	 * @version - v1.0
+	 * @author - Rosenbaum
 	 */
 	public Optional<?> cadastrar(Categoria novoResiduo) {
 		return ((Optional<?>) repository.findByResiduoContainingIgnoreCase(novoResiduo.getResiduo()))
@@ -42,27 +45,14 @@ public class CategoriaService {
 				}).orElseGet(() -> {
 					return Optional.ofNullable(repository.save(novoResiduo));
 				});
-	}
+			}
 
-	/**
-	 * 
-	 * @param residuo
-	 * @return
-	 */
-	public Optional<?> atualizar(Categoria residuo) {
-		return ((Optional<?>) repository.findByResiduoContainingIgnoreCase(residuo.getResiduo()))
-				.map(residuoExistente -> {
-					return Optional.empty();
-				}).orElseGet(() -> {
-					return Optional.ofNullable(repository.save(residuo));
-				});
-	}
-
-	/**
-	 * 
-	 * @param id
-	 * @param residuoParaAtualizar
-	 * @return
+	/** 
+	 * @param idCategoria - Pede um ID de categoria para checar se ele existe
+	 * @param residuoParaAtualizar - Se o ID corresponder com a DB, solicita o corpo de um novo residuo para atualizar.
+	 * @return - Retorna o residuo atualizado.
+	 * @version v1.0
+	 * @author - Rosenbaum
 	 */
 	public Optional<Categoria> att(Long idCategoria, Categoria residuoParaAtualizar) {
 		return repository.findById(idCategoria).map(novoResiduo -> {

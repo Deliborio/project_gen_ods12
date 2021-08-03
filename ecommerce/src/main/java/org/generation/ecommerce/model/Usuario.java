@@ -52,11 +52,13 @@ public class Usuario {
 	@NotNull(message = "Senha não deve ser nulo ou vazio")
 	@Size(min = 8)
 	private String senha;
+	
+	private String tipo;
 
-	@NotNull
 	@Enumerated(EnumType.STRING)
 	private TipoUsuario tipoUsuario;
-
+	
+	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({ "usuario" })
 	private List<Produto> listaProduto = new ArrayList<>();
@@ -126,4 +128,13 @@ public class Usuario {
 		this.listaProduto = listaProduto;
 	}
 
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	
 }

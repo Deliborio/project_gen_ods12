@@ -9,10 +9,13 @@
     display: flex;
     text-align: center;
     width: 70%; 
-    margin: 400px auto; 
-    align-items: center;
+    margin: auto;
     background-color: #1b532e;
-    
+}
+
+h1, h3, p {
+    margin: 20px;
+    line-height: 2rem;
 }
 
 .bg-missao {
@@ -22,6 +25,6 @@
 
 .missao {
     margin: auto;
-    background-color: aliceblue;
+    background-color: #E5F2D8;
     width: 70%;
 }

@@ -8,5 +8,12 @@
     width: 100%;
 }
 
+.bg-img{
+    background-image:url('https://hccenergiasolar.com.br/uploads/hccenergiasolar_image_494-1-.jpeg?nf_resize=fit&h=480');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+
+}
 
 
